@@ -1,5 +1,5 @@
 {
-    "name": "webetdesignesign/cookie-consent-bundle",
+    "name": "webetdesign/cookie-consent-bundle",
     "type": "symfony-bundle",
     "description": "",
     "license": "MIT",
@@ -30,7 +30,7 @@
     "autoload": {
         "exclude-from-classmap": ["/Tests/"],
         "psr-4": {
-            "WebEtDesign\\CookieConsentBundle\\": ""
+            "WebEtDesign\\CookieConsentBundle\\": "src/"
         }
     },
     "autoload-dev": {
