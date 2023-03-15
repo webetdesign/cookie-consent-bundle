@@ -62,7 +62,7 @@ $wd-cookie-consent-dark-theme-secondary-button-border-color: #fff !default;
         top: 11px;
         left: 10px;
         path{
-            fill: $white;
+            fill: #ffffff;
         }
     }
 }
@@ -74,7 +74,7 @@ $wd-cookie-consent-dark-theme-secondary-button-border-color: #fff !default;
     bottom: 80px;
     transition: left 500ms ease-in-out, opacity 300ms ease-in-out;
     opacity: 1;
-    @include media-breakpoint-up(sm){
+    @media (min-width: 576px){
         left: 20px;
     }
     &.hidden{

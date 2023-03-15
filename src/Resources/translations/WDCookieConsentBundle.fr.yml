@@ -1,23 +1,32 @@
 wd_cookie_consent:
-    title: 'Les cookies sur notre site.'
-    intro: ''
-    read_more: 'En savoir plus'
+    title: '<span>Contrôle</span> des cookies'
+    intro: "Ce site web utilise des cookies pour nous permettre de mieux suivre son activité. Êtes-vous d'accord ?"
+    read_more: 'Lire la politique de confidentialité'
     analytics:
-        title: 'Acceptez-vous les cookies analytiques ?'
-        description: ''
+        title: 'Google Analytics'
+        description: "Permet d'analyser les statistiques de consultation de notre site"
+        link: "https://support.google.com/analytics/answer/6004245"
+        link_label: "En savoir plus"
     tracking:
         title: 'Acceptez-vous les cookies de suivi ?'
         description: ''
+        link: ''
+        link_label: ''
     marketing:
         title: 'Acceptez-vous les publicités ciblées ?'
         description: ''
+        link: ''
+        link_label: ''
     social_media:
         title: 'Acceptez-vous les cookies des réseaux sociaux ?'
         description: ''
-    no: 'Non'
-    yes: 'Oui'
-    save: 'Sauvegarder'
-    use_only_functional_cookies: 'Utiliser uniquement les cookies fonctionnels'
-    use_all_cookies: 'Accepter tous les cookies'
-    show_details: 'Afficher les détails'
+        link: ''
+        link_label: ''
+    no: 'Refuser'
+    yes: 'Autoriser'
+    save: 'Enregistrer'
+    use_only_functional_cookies: 'Non merci'
+    use_all_cookies: 'Tout accepter'
+    show_details: 'Je choisis en détail'
     hide_details: 'Masquer les détails'
+
