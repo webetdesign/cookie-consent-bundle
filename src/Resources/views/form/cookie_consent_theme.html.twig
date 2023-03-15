@@ -1,0 +1,23 @@
+{% block choice_row %}
+    <div class="ch-cookie-consent__category">
+        <div class="ch-cookie-consent__category-information">
+            <h4 class="ch-cookie-consent__category-title">{{ ('wd_cookie_consent.'~name~'.title')|trans({}, 'WDCookieConsentBundle') }}</h4>
+            <p class="ch-cookie-consent__category-description">{{ ('wd_cookie_consent.'~name~'.description')|trans({}, 'WDCookieConsentBundle')|raw }}</p>
+        </div>
+        <div class="ch-cookie-consent__category-btns">
+            <a class="ch-cookie-consent__category-link" target="_blank" rel="noopener" href="{{ ('wd_cookie_consent.'~name~'.link')|trans({}, 'WDCookieConsentBundle') }}">{{ ('wd_cookie_consent.'~name~'.link_label')|trans({}, 'WDCookieConsentBundle') }}</a>
+            <div class="ch-cookie-consent__category-toggle">
+                {% for child in form %}
+                    {% if not child.rendered %}
+                        {{- form_widget(child) -}}
+                        {{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block submit_row %}
+    {{ block('button_widget') }}
+{% endblock %}

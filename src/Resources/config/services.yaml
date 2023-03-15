@@ -1,0 +1,31 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $cookieConsentTheme: '%wd_cookie_consent.theme%'
+            $cookieCategories: '%wd_cookie_consent.categories%'
+            $useLogger: '%wd_cookie_consent.use_logger%'
+            $cookieConsentPosition: '%wd_cookie_consent.position%'
+            $cookieConsentSimplified: '%wd_cookie_consent.simplified%'
+            $httpOnly: '%wd_cookie_consent.http_only%'
+            $formAction: '%wd_cookie_consent.form_action%'
+            $csrfProtection: '%wd_cookie_consent.csrf_protection%'
+
+    WebEtDesign\CookieConsentBundle\:
+        resource: '../../'
+        exclude: '../../{vendor}'
+
+    WebEtDesign\CookieConsentBundle\Controller\:
+        resource: '../../Controller/*'
+        public: true
+
+    WebEtDesign\CookieConsentBundle\Cookie\CookieChecker:
+        arguments: ["@=service('request_stack').getCurrentRequest()"]
+
+    WebEtDesign\CookieConsentBundle\Cookie\CookieLogger:
+        arguments:
+            $request: "@=service('request_stack').getCurrentRequest()"

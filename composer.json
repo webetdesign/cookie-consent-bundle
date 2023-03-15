@@ -1,7 +1,7 @@
 {
-    "name": "connectholland/cookie-consent-bundle",
+    "name": "webetdesignesign/cookie-consent-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony bundle for implementing Cookie Consent to comply to AVG/GDPR.",
+    "description": "",
     "license": "MIT",
     "require": {
         "php": "^7.2 || ^8.0.2",
@@ -30,12 +30,12 @@
     "autoload": {
         "exclude-from-classmap": ["/Tests/"],
         "psr-4": {
-            "ConnectHolland\\CookieConsentBundle\\": ""
+            "WebEtDesign\\CookieConsentBundle\\": ""
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ConnectHolland\\CookieConsentBundle\\Tests\\": "/Tests"
+            "WebEtDesign\\CookieConsentBundle\\Tests\\": "/Tests"
         }
     },
     "config": {
