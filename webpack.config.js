@@ -44,8 +44,7 @@ Encore
   // .enableBuildNotifications()
   .enableSourceMaps(!Encore.isProduction())
   // enables hashed filenames (e.g. app.abc123.css)
-  // .enableVersioning(Encore.isProduction())
-  .enableVersioning(false)
+  .enableVersioning(Encore.isProduction())
 
   .configureBabel((config) => {
     config.plugins.push('@babel/plugin-proposal-class-properties');
@@ -66,10 +65,7 @@ Encore
     resolveUrlLoader: false
   });
 
-// Retrieve the config
-const config = Encore.getWebpackConfig();
-config.node = {
-  fs: 'empty'
-};
 
-module.exports = Encore.getWebpackConfig();
+const defaultConfig = Encore.getWebpackConfig();
+defaultConfig.name = 'cookie';
+module.exports = defaultConfig;
