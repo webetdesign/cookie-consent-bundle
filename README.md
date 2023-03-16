@@ -173,6 +173,8 @@ Pour changer la couleur principale du module, surcharger la varriable css *--coo
 ````scss
 :root {
     --cookie-primary: #00abdf;
+    //ou avec interpolation de variable scss
+    --cookie-primary: #{$primary};
 }
 ````
 ### Events
@@ -183,3 +185,10 @@ dataLayer.push({
 });
 ````
 il faut donc avoir préalablement installé GTM pour pouvoir gérer ce qu'il se passe une fois le consentement donné.
+
+
+##### Update bundle
+
+yarn build 
+puis versionner les fichiers dans src/Resources/public/build
+
