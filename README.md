@@ -6,7 +6,7 @@ Ajouter le repo et l'installer
 ````yaml
 #composer.json
 "repositories": [
-...
+#...
   {
     "type": "git",
     "url": "https://github.com/webetdesign/cookie-consent-bundle.git"
@@ -24,9 +24,9 @@ composer require webetdesign/cookie-consent-bundle
 <?php
 // config/bundles.php
 return [
-        // ...
-            WebEtDesign\CookieConsentBundle\WDCookieConsentBundle::class => ['all' => true],
-        // ...
+// ...
+    WebEtDesign\CookieConsentBundle\WDCookieConsentBundle::class => ['all' => true],
+// ...
 ];
 ```
 
@@ -54,7 +54,7 @@ framework:
     esi: true
 ````
 ### 6 : Assets configuration
-*Pour ajouter des assets en admin vous appeler vos assets via  extra_javascripts et extra_stylesheets dans config/packages/sonata/sonata_admin.yaml  
+*Pour ajouter des assets en admin vous appelez vos assets via  extra_javascripts et extra_stylesheets dans config/packages/sonata/sonata_admin.yaml  
 Il faut faire pareil mais en front dans notre application.*
 
 *Pour cela, il faut d'abord configurer l'entrée webpack*
@@ -182,4 +182,4 @@ dataLayer.push({
   event: `rgpd_activate_${cat}`
 });
 ````
-il faut donc avoir préalablement installé GTM pour pouvoir gérer ce qu'il se passe une fois un consentement donné.
+il faut donc avoir préalablement installé GTM pour pouvoir gérer ce qu'il se passe une fois le consentement donné.

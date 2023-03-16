@@ -5,7 +5,6 @@ export default class extends Controller {
     show: Boolean,
     categories: Array
   };
-
   consentEventHandler(){
     document.addEventListener('cookie-consent-form-submit-successful', (e)=>{
       const detail = JSON.parse(e.detail);
