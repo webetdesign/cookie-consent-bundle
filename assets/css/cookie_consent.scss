@@ -1,4 +1,7 @@
-$wd-cookie-consent-primary:#00abdf;
+:root {
+    --cookie-primary: #00abdf;
+}
+
 @function rem($size) {
     $remSize : $size / 16px;
     @return #{$remSize}rem;
@@ -9,9 +12,9 @@ $wd-cookie-consent-text-color: #666 !default;
 $wd-cookie-consent-title-color: #121212 !default;
 $wd-cookie-consent-border-color: #666 !default;
 $wd-cookie-consent-checkbox-inactive-background-color: #fff !default;
-$wd-cookie-consent-checkbox-inactive-text-color: $wd-cookie-consent-primary !default;
-$wd-cookie-consent-checkbox-inactive-border-color: $wd-cookie-consent-primary !default;
-$wd-cookie-consent-checkbox-active-background-color: $wd-cookie-consent-primary !default;
+$wd-cookie-consent-checkbox-inactive-text-color: var(--cookie-primary) !default;
+$wd-cookie-consent-checkbox-inactive-border-color: var(--cookie-primary) !default;
+$wd-cookie-consent-checkbox-active-background-color: var(--cookie-primary) !default;
 $wd-cookie-consent-checkbox-active-text-color: #fff !default;
 $wd-cookie-consent-checkbox-active-border-color: #fff !default;
 $wd-cookie-consent-button-background: #fff;
@@ -51,7 +54,7 @@ $wd-cookie-consent-dark-theme-secondary-button-border-color: #fff !default;
     }
     svg{
         path{
-            fill: $wd-cookie-consent-primary;
+            fill: var(--cookie-primary);
         }
     }
     .icon{

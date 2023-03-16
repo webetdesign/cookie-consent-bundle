@@ -1,6 +1,6 @@
 {% form_theme form '@WDCookieConsent/form/cookie_consent_theme.html.twig' %}
 
-<div data-controller="cookie" class="hidden d-none" data-cookie-show-value="{{ WDCookieConsent_isCookieConsentSavedByUser() ? 0 : 1 }}">
+<div data-controller="cookie" class="hidden d-none" data-cookie-show-value="{{ WDCookieConsent_isCookieConsentSavedByUser() ? 0 : 1 }}" data-cookie-categories-value="{{ categories|json_encode() }}">
     <div class="ch-cookie-consent ch-cookie-consent--{{ theme }}-theme ch-cookie-consent--{{ position }} {% if simplified %}ch-cookie-consent--simplified{% endif %}">
         {% block title %}
             <h3 class="ch-cookie-consent__title">{{ 'wd_cookie_consent.title'|trans({}, 'WDCookieConsentBundle')|raw }}</h3>
