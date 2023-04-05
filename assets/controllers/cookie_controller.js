@@ -145,6 +145,13 @@ export default class extends Controller {
     document.querySelectorAll('.ch-cookie-consent__category-toggle input[value=false]').forEach((el)=>{
       el.checked = false;
     });
+    this.categoriesValue.forEach((cat)=>{
+        if (dataLayer.filter(obj =>{ return obj.event === `rgpd_activate_${cat}`}).length === 0){
+          dataLayer.push({
+            event: `rgpd_activate_${cat}`,
+          });
+        }
+    });
 
   }
   disallowAll(){
