@@ -10,12 +10,18 @@ declare(strict_types=1);
 namespace WebEtDesign\CookieConsentBundle\Twig;
 
 use WebEtDesign\CookieConsentBundle\Cookie\CookieChecker;
-use Symfony\Component\HttpFoundation\Request;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 class WDCookieConsentTwigExtension extends AbstractExtension
 {
+    private CookieChecker $cookieChecker;
+
+    public function __construct(CookieChecker $cookieChecker)
+    {
+        $this->cookieChecker = $cookieChecker;
+    }
+
     /**
      * Register all custom twig functions.
      *
@@ -42,9 +48,7 @@ class WDCookieConsentTwigExtension extends AbstractExtension
      */
     public function isCookieConsentSavedByUser(array $context): bool
     {
-        $cookieChecker = $this->getCookieChecker($context['app']->getRequest());
-
-        return $cookieChecker->isCookieConsentSavedByUser();
+        return $this->cookieChecker->isCookieConsentSavedByUser();
     }
 
     /**
@@ -52,16 +56,10 @@ class WDCookieConsentTwigExtension extends AbstractExtension
      */
     public function isCategoryAllowedByUser(array $context, string $category): bool
     {
-        $cookieChecker = $this->getCookieChecker($context['app']->getRequest());
-
-        return $cookieChecker->isCategoryAllowedByUser($category);
+        return $this->cookieChecker->isCategoryAllowedByUser($category);
     }
 
     /**
      * Get instance of CookieChecker.
      */
-    private function getCookieChecker(Request $request): CookieChecker
-    {
-        return new CookieChecker($request);
-    }
 }
