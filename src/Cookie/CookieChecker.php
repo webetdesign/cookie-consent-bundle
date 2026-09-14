@@ -12,17 +12,20 @@ namespace WebEtDesign\CookieConsentBundle\Cookie;
 use WebEtDesign\CookieConsentBundle\Enum\CookieNameEnum;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class CookieChecker
 {
-    /**
-     * @var Request
-     */
-    private $request;
+    private RequestStack $requestStack;
 
-    public function __construct(Request $request)
+    public function __construct(RequestStack $requestStack)
     {
-        $this->request = $request;
+        $this->requestStack = $requestStack;
+    }
+
+    private function request(): ?Request
+    {
+        return $this->requestStack->getCurrentRequest();
     }
 
     /**
@@ -30,7 +33,7 @@ class CookieChecker
      */
     public function isCookieConsentSavedByUser(): bool
     {
-        return $this->request->cookies->has(CookieNameEnum::COOKIE_CONSENT_NAME);
+        return $this->request()?->cookies->has(CookieNameEnum::COOKIE_CONSENT_NAME) ?? false;
     }
 
     /**
@@ -38,6 +41,6 @@ class CookieChecker
      */
     public function isCategoryAllowedByUser(string $category): bool
     {
-        return $this->request->cookies->get(CookieNameEnum::getCookieCategoryName($category)) === 'true';
+        return $this->request()?->cookies->get(CookieNameEnum::getCookieCategoryName($category)) === 'true';
     }
 }
