@@ -12,54 +12,46 @@ namespace WebEtDesign\CookieConsentBundle\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="ch_cookieconsent_log")
- */
+#[ORM\Entity]
+#[ORM\Table(name: 'ch_cookieconsent_log')]
 class CookieConsentLog
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     *
      * @var int
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
      * @var string
      */
+    #[ORM\Column(type: 'string', length: 255)]
     protected $ipAddress;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
      * @var string
      */
+    #[ORM\Column(type: 'string', length: 255)]
     protected $cookieConsentKey;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
      * @var string
      */
+    #[ORM\Column(type: 'string', length: 255)]
     protected $cookieName;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
      * @var string
      */
+    #[ORM\Column(type: 'string', length: 255)]
     protected $cookieValue;
 
     /**
-     * @ORM\Column(type="datetime")
-     *
      * @var DateTime
      */
+    #[ORM\Column(type: 'datetime')]
     protected $timestamp;
 
     public function getId(): int
